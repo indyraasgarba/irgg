@@ -9,8 +9,6 @@
     :root {
       color-scheme: light;
       --green: #064b3b;
-      --orange: #d95b3f;
-      --gold: #c9c75e;
     }
     * { box-sizing: border-box; }
     body {
@@ -30,10 +28,21 @@
       font-size: clamp(1.4rem, 4vw, 2rem);
     }
     header p { margin: 0; }
-    main {
-      width: min(100% - 1.25rem, 900px);
-      margin: 1.25rem auto 2rem;
-      text-align: center;
+    
+    /* Side-by-side layout container */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: min(100% - 1.25rem, 1100px);
+      margin: 1.5rem auto;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .flyer-box {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
     }
     .flyer {
       display: block;
@@ -42,7 +51,31 @@
       background: white;
       border-radius: .35rem;
       box-shadow: 0 3px 16px #00000018;
-      margin-bottom: 20px;
+    }
+    
+    /* Donation panel styling */
+    .donation-box {
+      flex: 0 0 300px;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 3px 16px #00000010;
+    }
+    .donation-box img {
+      width: 140px;
+      height: 140px;
+      margin-bottom: 15px;
+    }
+    .donate-btn {
+      background-color: #0070ba;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
     }
     footer {
       text-align: center;
@@ -58,27 +91,29 @@
     <p>Navratri 2026 • Garba, Raas &amp; Aarti</p>
   </header>
   
-  <main>
-    <!-- Event Flyer Image -->
-    <img class="flyer" src="garba-flyer-2026.jpg" alt="Indy Raas Garba Group Navratri 2026 event flyer.">
-  </main>
+  <div class="container">
+    <!-- Flyer on the left/main side -->
+    <div class="flyer-box">
+      <img class="flyer" src="garba-flyer-2026.jpg" alt="Indy Raas Garba Group Navratri 2026 event flyer.">
+    </div>
+
+    <!-- Donation panel on the side -->
+    <div class="donation-box">
+      <h3>Support Our Event</h3>
+      <p style="font-size: 0.9rem;">Scan the QR code or click below to donate:</p>
+      
+      <img src="IRGG 2026 Donation QR Code.png" alt="Donation QR Code">
+      
+      <br>
+      
+      <a href="https://square.link/u/uJCrYVgG" target="_blank" class="donate-btn">
+        Click Here to Donate
+      </a>
+    </div>
+  </div>
 
   <footer>
     Indy Raas Garba Group
   </footer>
-
-  <!-- Donation Section with QR Code and Button -->
-  <div style="text-align: center; padding: 30px; font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 20px auto; max-width: 900px; border-radius: 8px;">
-    <h3>Support Our Event</h3>
-    <p>Scan the QR code below or click the button to make a donation:</p>
-    
-    <img src="IRGG 2026 Donation QR Code.png" alt="Donation QR Code" style="width: 150px; height: 150px; margin-bottom: 15px;">
-    
-    <br>
-    
-    <a href="https://square.link/u/uJCrYVgG" target="_blank" style="background-color: #0070ba; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
-      Click Here to Donate
-    </a>
-  </div>
 </body>
 </html>
